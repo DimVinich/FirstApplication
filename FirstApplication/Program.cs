@@ -4,21 +4,16 @@ class MainClass
 {
 	public static void Main(string[] args)
 	{
-		Console.Write("Enter your name: ");
-		var name = Console.ReadLine().ToString();
 
-		Console.Write("Enter your age: ");
-		var age = Convert.ToInt32(Console.ReadLine());
+		const string MyName = "Jane";
 
-		Console.WriteLine("Your name is {0} and age is {1}", name, age);
-
-		Console.Write("Enter your birthdate: ");
-		var birthdate = Console.ReadLine();
-
-		Console.WriteLine("Your birthdate is " + birthdate);
+		Console.WriteLine(MyName);
+		Console.WriteLine("\tПривет, мир");
+		Console.WriteLine("\tМне 27 лет");
+		Console.WriteLine("\t My name is \n {0}", MyName);
+		Console.WriteLine("\u0040");
+		Console.WriteLine("\u0023");
 
 		Console.ReadKey();
-		//Console.Write("");
-		//Console.ReadLine();
 	}
 }
