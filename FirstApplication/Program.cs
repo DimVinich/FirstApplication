@@ -2,18 +2,18 @@
 
 class MainClass
 {
-    public static void Main(string[] args)
-    {
-        //double result = 5.0 / 2.0;
-        double result = 10 % 3;
-        //Console.WriteLine("5 / 2 = {0}", result);
-        Console.WriteLine("10 % 3 = {0}", result);
+	public static void Main(string[] args)
+	{
 
-        double result2 = 5.0 % 2.0;
-        Console.WriteLine("5 % 2 = {0}", result2);
+		//var name = "Jane";
+		Console.Write("Введите имя: ");
+		var name = Console.ReadLine().ToString();
 
-        int counter = 10;
-        Console.WriteLine("Value :  {0} Increment : {1}", counter, counter++);
+		Console.Write("Введите возраст: ");
+		var age = checked((byte)int.Parse(Console.ReadLine()));
+		Console.WriteLine("Your name is {0} and age is {1} ", name, age);
 
-    }
-}
+		//Console.Write("What is your favorite day of week? ");
+
+//var day = (DayOfWeek) int.Parse(Console.ReadLine());
+//Console.WriteLine("Your favorite day is {0}", day);
