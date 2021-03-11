@@ -1,0 +1,226 @@
+=================== Стартовый
+using System;
+
+namespace FirstApplication.ConsoleApp
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			Console.WriteLine("Как Вас зовут?");
+			string name = Console.ReadLine();
+			Console.WriteLine("Сколько Вам лет?");
+			string age = Console.ReadLine();
+			Greet(name, age);
+			Console.WriteLine("Рад был познакомиться!");
+		}
+		
+		static void Greet(string name, string age)
+		{
+			Console.WriteLine("Здравствуйте, {0}", name);
+			Console.WriteLine("Мне сообщили, что Вам {0}", age);
+		}
+	}
+}
+
+===============после 3,2
+
+
+using System;
+
+class MainClass
+{
+	public static void Main(string[] args)
+	{
+
+		const string MyName = "Jane";
+		  
+		Console.WriteLine(MyName);
+		Console.WriteLine("\tПривет, мир");
+		Console.WriteLine("\tМне 27 лет");
+		Console.WriteLine("\t My name is \n {0}", MyName);
+		Console.WriteLine("\u0040");
+		Console.WriteLine("\u0023");
+
+		Console.ReadKey();
+	}
+}
+
+==================== после 3.3
+
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+  
+		string MyName = "Jane";
+		byte MyAge = 27;
+		bool HaveIApet  = true;
+		double MyShoeSize = 37.5;
+
+		Console.WriteLine("My name is " + MyName);
+		Console.WriteLine("MyAge " + MyAge);
+		Console.WriteLine("Do I have a pet? " + HaveIApet);
+		Console.WriteLine("My shoe size is " + MyShoeSize);
+		
+  }
+}
+
+
+================== просмотр мин. значений.
+
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    Console.WriteLine("IntMin {0} ", int.MinValue);
+    Console.WriteLine("IntMax {0} ", int.MaxValue);
+    Console.WriteLine("LongMin {0} ", long.MinValue);
+    Console.WriteLine("LongMax {0} ", long.MaxValue);
+    Console.WriteLine("DecimalMax {0} ", decimal.MaxValue);
+    Console.WriteLine("DoubleMax {0} ", double.MaxValue);
+  }
+}
+ 
+================= После 3.4
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    DaysOfWeek MyFavoriteDay;
+
+		MyFavoriteDay = DaysOfWeek.Friday;
+
+		Console.WriteLine(MyFavoriteDay);
+  }
+}
+
+enum DaysOfWeek : byte
+{
+	Tuesday,
+	Monday,
+	Wednesday,
+	Friday
+}
+
+enum Semaphore : int
+{
+  Red = 100,
+  Yellow = 200,
+  Green = 300
+}
+
+==================== 3.5.1
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+		
+    string MyName = "Евгения";
+		Console.WriteLine("Привет, мир");
+		Console.WriteLine();
+		Console.WriteLine("Меня зовут {0}", MyName);
+
+		//0 — позиция нашей переменной. То есть переменная будет на позиции 0.
+
+
+		//Также мы можем вставить в строку не переменную, а строковый литерал:
+		Console.WriteLine("Меня зовут {0}", "Маша");
+
+
+		//И, естественно, мы можем использовать несколько переменных при выводе. В этом случае располагаем их в порядке нумерации «мест».
+		var age = 27;
+		var weight = 50;
+    var favcolor = "black";
+    var name = "Jane";
+		Console.WriteLine("Возраст {0} \n Вес {1} \n favcolor {2}", age, weight, favcolor);
+	  Console.WriteLine("{0} \n {1} \n {2}", name, age, favcolor);
+		Console.ReadKey();
+  }
+}
+
+===================== после 3.5.2
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    string MyName = "Computer";
+		Console.WriteLine("Привет, человек");
+		Console.WriteLine("Меня зовут {0}", MyName);
+		Console.Write("А как тебя зовут? ");
+		string YourName = Console.ReadLine();
+		Console.Write("Рад встрече, {0} ", YourName);
+
+    string str = Console.ReadLine();
+
+
+		Console.ReadKey();
+  }
+}
+
+========================= после 3.6
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    //double result = 5.0 / 2.0;
+    double result = 10 % 3;
+		//Console.WriteLine("5 / 2 = {0}", result);
+    Console.WriteLine("10 % 3 = {0}", result);
+
+    double result2 = 5.0 % 2.0;
+		Console.WriteLine("5 % 2 = {0}", result2);
+
+    int counter = 10;
+		Console.WriteLine("Value :  {0} Increment : {1}", counter, counter++);
+
+  }
+}
+
+========  после 3.7
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+
+		//var name = "Jane";
+    Console.Write("Введите имя: ");
+    var name = Console.ReadLine().ToString();
+		
+    Console.Write("Введите возраст: ");
+    var age = checked((byte) int.Parse(Console.ReadLine()));
+		Console.WriteLine("Your name is {0} and age is {1} ", name, age);
+		
+		//Console.Write("What is your favorite day of week? ");
+
+		//var day = (DayOfWeek) int.Parse(Console.ReadLine());
+		//Console.WriteLine("Your favorite day is {0}", day);
+
+  }
+}
+
+Финальное 3.7
+using System;
+
+class MainClass
+{
+	public static void Main(string[] args)
+	{
+		Console.Write("Enter your name: ");
+		var name = Console.ReadLine().ToString();
+
+		Console.Write("Enter your age: ");
+		var age = Convert.ToInt32(Console.ReadLine());
+
+		Console.WriteLine("Your name is {0} and age is {1}", name, age);
+		
+		Console.Write("Enter your birthdate: ");
+		var birthdate = Console.ReadLine();
+
+		Console.WriteLine("Your birthdate is " + birthdate);
+
+		Console.ReadKey();
+		//Console.Write("");
+		//Console.ReadLine();
+	}
+}
