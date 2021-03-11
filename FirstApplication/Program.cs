@@ -2,18 +2,18 @@
 
 class MainClass
 {
-	public static void Main(string[] args)
-	{
-		string MyName = "Computer";
-		Console.WriteLine("Привет, человек");
-		Console.WriteLine("Меня зовут {0}", MyName);
-		Console.Write("А как тебя зовут? ");
-		string YourName = Console.ReadLine();
-		Console.Write("Рад встрече, {0} ", YourName);
+    public static void Main(string[] args)
+    {
+        //double result = 5.0 / 2.0;
+        double result = 10 % 3;
+        //Console.WriteLine("5 / 2 = {0}", result);
+        Console.WriteLine("10 % 3 = {0}", result);
 
-		string str = Console.ReadLine();
+        double result2 = 5.0 % 2.0;
+        Console.WriteLine("5 % 2 = {0}", result2);
 
+        int counter = 10;
+        Console.WriteLine("Value :  {0} Increment : {1}", counter, counter++);
 
-		Console.ReadKey();
-	}
+    }
 }
