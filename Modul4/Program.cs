@@ -4,13 +4,15 @@ class MainClass
 {
 	public static void Main(string[] args)
 	{
-		// ===============================		Задание 4,2,5
+		// ===============================		Задание 4,2,11
 		Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
 
-//		var color = Console.ReadLine();
-        for (int i = 5; i > 0; i--)
+        //		var color = Console.ReadLine();
+        // for (int i = 5; i > 0; i--)
+        int t = 0;
+        do
         {
-            Console.WriteLine("Iteration {0}", i);
+            Console.WriteLine(t);
             switch (Console.ReadLine())
             {
                 case "red":
@@ -39,6 +41,7 @@ class MainClass
                     Console.WriteLine("Your color is yellow!");
                     break;
             }
-        }
+            t++;
+        } while ( t < 3 );
     }
 }
