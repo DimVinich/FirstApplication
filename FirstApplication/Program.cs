@@ -20,6 +20,5 @@ class MainClass
 		Console.ReadKey();
 		//Console.Write("");
 		//Console.ReadLine();
-		//test
 	}
 }
