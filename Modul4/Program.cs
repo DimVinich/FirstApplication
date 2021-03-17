@@ -5,6 +5,8 @@ class MainClass
     public static void Main(string[] args)
 
     // ===================================== Задание 4.3.14
+    // была проблема с служебными словами, которы хотел использовать как переменные. ...
+    // row и column    Поэтому и сделал через цикл. ((
 
     {
         int[][] arr = new int[3][];
@@ -20,6 +22,15 @@ class MainClass
                 Console.Write(arr[i][j] + " ");
             }
 
+        }
+
+        //foreach (var row in arr)
+        foreach(var arrRow in arr)
+        {
+            foreach (var arrColumn in arrRow)
+            {
+                Console.Write(arrColumn + " ");
+            }
         }
 
         //Console.WriteLine();
