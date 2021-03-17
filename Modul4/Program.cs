@@ -4,18 +4,24 @@ class MainClass
 {
     public static void Main(string[] args)
 
-    // ===================================== Задание 4.3.13
+    // ===================================== Задание 4.3.14
 
     {
-        var arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
-        int sum = 0;
+        int[][] arr = new int[3][];
+        arr[0] = new int[2] { 1, 2 };
+        arr[1] = new int[3] { 1, 2, 3 };
+        arr[2] = new int[5] { 1, 2, 3, 4, 5 };
 
-        foreach (var item in arr)
+        for (int i = 0; i < arr.GetUpperBound(0) +1; i++)
         {
-            sum += item;
+            int[] row = arr[i];
+            for (int j = 0; j < row.GetUpperBound(0) +1; j++)
+            {
+                Console.Write(arr[i][j] + " ");
+            }
+
         }
 
-        Console.WriteLine("Сумма массива = " + sum);
         //Console.WriteLine();
         //Console.Write(arr[i] + " ");
         Console.ReadKey();
