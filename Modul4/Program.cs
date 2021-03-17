@@ -4,34 +4,27 @@ class MainClass
 {
     public static void Main(string[] args)
 
-    // ===================================== Задание 4.3.14
-    // была проблема с служебными словами, которы хотел использовать как переменные. ...
-    // row и column    Поэтому и сделал через цикл. ((
-
+    // ===================================== Задание 4.3.16
+    
     {
-        int[][] arr = new int[3][];
-        arr[0] = new int[2] { 1, 2 };
-        arr[1] = new int[3] { 1, 2, 3 };
-        arr[2] = new int[5] { 1, 2, 3, 4, 5 };
+        int[,] arr = { { -5, 6, 9, 1, 2, -3 } , { -8, 8, 1, 1, 2, -3 } };
+        int posNumber = 0;
+
+        foreach (var arrItem in arr)
+        {
+            posNumber = arrItem > 0 ? ++posNumber : posNumber;
+        }
+        Console.WriteLine("кол-во положительных чисел " + posNumber);
+
+
+        posNumber = 0;
 
         for (int i = 0; i < arr.GetUpperBound(0) +1; i++)
         {
-            int[] row = arr[i];
-            for (int j = 0; j < row.GetUpperBound(0) +1; j++)
-            {
-                Console.Write(arr[i][j] + " ");
-            }
-
+            for(int j = 0; j < arr.GetUpperBound(1) +1; j++)
+            posNumber = arr[i,j] > 0 ? ++posNumber : posNumber;
         }
-
-        //foreach (var row in arr)
-        foreach(var arrRow in arr)
-        {
-            foreach (var arrColumn in arrRow)
-            {
-                Console.Write(arrColumn + " ");
-            }
-        }
+        Console.WriteLine("кол-во положитеьных чисел "+posNumber);
 
         //Console.WriteLine();
         //Console.Write(arr[i] + " ");
