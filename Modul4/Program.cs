@@ -4,29 +4,20 @@ class MainClass
 {
     public static void Main(string[] args)
 
-    // ===================================== Задание 4.3.12
+    // ===================================== Задание 4.3.13
 
     {
         var arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
-        int minPrev;
+        int sum = 0;
 
-        var l = arr.Length;
-        for (int i = 0; i < l; i++) 
+        foreach (var item in arr)
         {
-            for (int k = i + 1; k < l; k++)
-            {
-                if (arr[i] > arr[k]  )
-                {
-                    minPrev = arr[i];
-                    arr[i] = arr[k];
-                    arr[k] = minPrev;
-                }
-            }
-                        
-            Console.Write(arr[i] + " ");
+            sum += item;
         }
 
+        Console.WriteLine("Сумма массива = " + sum);
         //Console.WriteLine();
+        //Console.Write(arr[i] + " ");
         Console.ReadKey();
     }
 
