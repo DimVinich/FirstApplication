@@ -87,4 +87,108 @@ class MainClass
 }
 
 
-==============================================
+==============================================   4.3. ...
+using System;
+
+namespace FirstApp 
+{
+  class Program 
+  {
+    static void Main(string[] args) 
+    {
+      var numbers = new int[] {6, 30, 7, 14, 2, 15};
+      int minValue = 100000,
+      minIndex = -1;
+
+      for (int i = 0; i < numbers.Length; i++) 
+      {
+        if (numbers[i] < minValue) 
+        {
+          minValue = numbers[i];
+          minIndex = i;
+        }
+      }
+
+      Console.WriteLine("Наименьший элемент массива имеет индекс {0}, значение этого элемента = {1}", minIndex, numbers[minIndex]);
+
+      Console.ReadKey();
+    }
+  }
+}
+
+============================================   4.3.4
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    Console.WriteLine("Введите своё имя");
+
+		var name = Console.ReadLine();
+
+		Console.WriteLine("Ваше имя по буквам: ");
+
+		foreach(var ch in name)
+		{
+			Console.Write(ch + " ");
+		}
+
+		Console.WriteLine("Последняя буква вашего имени: {0}", name[name.Length - 1]);
+
+		Console.ReadKey();
+  }
+}
+
+=======================================================================
+using System;
+
+class MainClass
+{
+	public static void Main(string[] args)
+	{
+		// ===================================== Задание 4.3.7
+		Console.WriteLine("Введите своё имя");
+
+		var name = Console.ReadLine();
+
+		Console.WriteLine("Ваше имя по буквам: ");
+
+		foreach (var ch in name)
+		{
+			Console.Write(ch + " ");
+		}
+
+		Console.WriteLine("Последняя буква вашего имени: {0}", name[name.Length - 1]);
+
+		Console.WriteLine("Ваше имя по буквам наоборот: ");
+		for (int i = name.Length - 1; i >= 0; i--)
+		{
+			Console.Write(name[i] + " ");
+		}
+
+
+		Console.ReadKey();
+	}
+}
+
+======================================================= 4.3.11
+using System;
+
+class MainClass
+{
+    public static void Main(string[] args)
+
+    // ===================================== Задание 4.3.11
+
+    {
+        int[,] array = { { 1, 2, 3 }, { 5, 6, 7 }, { 8, 9, 10 }, { 11, 12,  13 } };
+
+        for (int i = 0; i < array.GetUpperBound(1) + 1; i++)
+        {
+            for (int k = 0; k < array.GetUpperBound(0) + 1; k++)
+                Console.Write(array[k, i] + " ");
+
+            Console.WriteLine();
+        }
+
+    }
+}
