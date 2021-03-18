@@ -4,29 +4,45 @@ class MainClass
 {
     public static void Main(string[] args)
 
-    // ===================================== Задание 4.4.5
+    // ===================================== Задание 4.5
     
     {
-        (string Name, string Type, double Age, int NameCount) Pet;
+        (string Name, string FName, string Login, int LengLogin, bool FPet, int Age, string[] FavColor ) User;
+        User.FavColor = new string[3];
 
-        Console.Write("Введите имя питомца: ");
-        Pet.Name = Console.ReadLine();
+        for (int i = 0; i < 3; i++)
+        {
+            Console.WriteLine("Введите имя");
+            User.Name = Console.ReadLine();
 
-        Console.Write("Ведите тип Вашего питомца (кошка, собака и т.д. ): ");
-        Pet.Type = (Console.ReadLine());
+            Console.WriteLine("Введите фамилию");
+            User.FName = Console.ReadLine();
 
-        Console.Write("Ведите возвраст Вашего питомца: ");
-        Pet.Age = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Введите логин");
+            User.Login = Console.ReadLine();
+            User.LengLogin = User.Login.Length;
 
-        Pet.NameCount = Pet.Name.Length;
+            Console.WriteLine("Есть ли у Вас животные ?  Да или Нет");
+            User.FPet = Console.ReadLine() == "Да" ? true : false;
 
-        Console.WriteLine("Имя Вашего питомца :{0}", Pet.Name);
-        Console.WriteLine("Тип вашего питомца :{0}", Pet.Type );
-        Console.WriteLine("Возраст вашего питомца :{0}", Pet.Age);
+            Console.WriteLine("Введите возраст пользователя");
+            
+            User.Age = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Введите три любимых цвета пользователя");
+            for (int j = 0; j < User.FavColor.Length; j++)
+            {
+                User.FavColor[j] = Console.ReadLine();
+            }
+            //User.FavColor[0] = Console.ReadLine();
+            //User.FavColor[1] = Console.ReadLine();
+            //User.FavColor[2] = Console.ReadLine();
+        }
 
 
         //Console.WriteLine("Моё имя: {0}", name);
-        //name = Console.ReadLine().ToString();
+        //= Console.ReadLine();
+        //= Convert.ToInt32(Console.ReadLine());
         Console.ReadKey();
     }
 
