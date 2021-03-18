@@ -4,44 +4,23 @@ class MainClass
 {
     public static void Main(string[] args)
 
-    // ===================================== Задание 4.3.17
+    // ===================================== Задание 4.4.2
     
     {
-        int[,] arr = { { -5, 6, 9, 1, 2, -3 } , { -8, 8, 1, 1, 2, -3 } };
-        int posNumber = 0;
+        var anketa = (name: "", age: 0, birthdate: "");
 
-        for (int i = 0; i < arr.GetUpperBound(0) +1; i++)
-        {
-            for (int j = 0; j < arr.GetUpperBound(1) + 1; j++)
-            {
-                Console.Write(arr[i, j] + " ");
-            }
-            Console.WriteLine();
-        }
+        Console.Write("Enter your name: ");
+        anketa.name = Console.ReadLine().ToString();
 
+        Console.Write("Enter your age: ");
+        anketa.age = Convert.ToInt32(Console.ReadLine());
 
-        //  =================== Сортировка
-        int temp = 0;
-        for (int k = 0; k <= arr.GetUpperBound(0); k++)
-        {
-            for (int i = 0; i <= arr.GetUpperBound(1); i++)
-            {
-                for (int j = i + 1; j <= arr.GetUpperBound(1); j++)
-                {
-                    if (arr[k,i] > arr[k,j])
-                    {
-                        temp = arr[k, i];
-                        arr[k, i] = arr[k, j];
-                        arr[k, j] = temp;
-                    }
-                }
+        Console.WriteLine("Your name is {0} and age is {1}", anketa.name, anketa.age);
 
-                Console.Write(arr[k, i] + " ");
-            }
+        Console.Write("Enter your birthdate: ");
+        anketa.birthdate = Console.ReadLine();
 
-            Console.WriteLine();
-        }
-
+        Console.WriteLine("Your birthdate is " + anketa.birthdate);
 
         //Console.WriteLine();
         //Console.Write(arr[i] + " ");
