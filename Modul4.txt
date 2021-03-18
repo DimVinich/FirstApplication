@@ -441,9 +441,12 @@ class MainClass
     public static void Main(string[] args)
 
     // ===================================== Задание 4.4.2
+    //              Исходный код взят с финального здания модуля 3
     
     {
-        var anketa = (name: "", age: 0, birthdate: "");
+        //var anketa = (name: "", age: 0, birthdate: "");
+        // Более правильное задание кортеджа
+        (string name, int age, string birthdate) anketa;
 
         Console.Write("Enter your name: ");
         anketa.name = Console.ReadLine().ToString();
@@ -457,6 +460,36 @@ class MainClass
         anketa.birthdate = Console.ReadLine();
 
         Console.WriteLine("Your birthdate is " + anketa.birthdate);
+
+        //Console.WriteLine();
+        //Console.Write(arr[i] + " ");
+        Console.ReadKey();
+    }
+
+}
+
+using System;
+
+class MainClass
+{
+    public static void Main(string[] args)
+
+    // ===================================== Задание 4.4.3
+    
+    {
+        var (name, age) = ("Dimon", 99);
+
+        Console.WriteLine("Моё имя: {0}", name);
+        Console.WriteLine("Мой возраст: {0}", age);
+
+        Console.Write("Введите имя: ");
+        name = Console.ReadLine().ToString();
+
+        Console.Write("Ведите возраст с цифрами: ");
+        age = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Ваше имя :{0}", name);
+        Console.WriteLine("Ваш возраст :{0}", age);
 
         //Console.WriteLine();
         //Console.Write(arr[i] + " ");
