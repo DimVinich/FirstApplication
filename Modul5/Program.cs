@@ -2,12 +2,12 @@
 
 class MainClass
 {
-    // ===================================== Задание 5.1.7
+    // ===================================== Задание 5.2.3
 
     // ---------------- заполнение любымых цветов   
-    static string ShowColor()
+    static string ShowColor(string username)
     {
-        Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
+        Console.WriteLine("{0}, Напишите свой любимый цвет на английском с маленькой буквы", username);
         var color = Console.ReadLine();
 
         switch (color)
@@ -42,7 +42,7 @@ class MainClass
         return color;
     }
 
-    // ------------------ Заполнение массива интов
+    // ------------------ ввод массива интов с сотритовкой
     static int[] GetArrayFromConsole()
     {
         var result = new int[5];
@@ -53,37 +53,50 @@ class MainClass
             result[i] = int.Parse(Console.ReadLine());
         }
 
+        int minPrev = 0;
+        var l = result.Length;               // Отсортировали массив
+        for (int i = 0; i < l; i++)
+        {
+            for (int k = i + 1; k < l; k++)
+            {
+                if (result[i] > result[k])
+                {
+                    minPrev = result[i];
+                    result[i] = result[k];
+                    result[k] = minPrev;
+                }
+            }
+        }
         return result;
     }
 
 
     public static void Main(string[] args)
     {
-        var arrInput = new int[5];
-        int minPrev;
+        (string name, int age) anketa;
 
-        arrInput = GetArrayFromConsole();   // Заполнили массив
+        Console.Write("Введите имя: ");
+        anketa.name = Console.ReadLine();
+        Console.Write("Введите возраст с цифрами: ");
+        anketa.age = Convert.ToInt32(Console.ReadLine());
 
-        //      А можно было и так
-        // var int[] array = GetArrayFromConsole();
+        Console.WriteLine("Ваше имя: {0}", anketa.name);
+        Console.WriteLine("Ваш возраст: {0}", anketa.age);
 
-        var l = arrInput.Length;               // Отсортировали массив
-        for (int i = 0; i < l; i++)
+        var favcolors = new string[3];
+        
+        for (int i = 0; i < favcolors.Length; i++)
         {
-            for (int k = i + 1; k < l; k++)
-            {
-                if (arrInput[i] > arrInput[k])
-                {
-                    minPrev = arrInput[i];
-                    arrInput[i] = arrInput[k];
-                    arrInput[k] = minPrev;
-                }
-            }
-
-            Console.Write(arrInput[i] + " ");
+             favcolors[i]= ShowColor(anketa.name);
         }
 
-         Console.ReadKey();
+        Console.WriteLine("Ваши любимые цвета ");
+        foreach (var color in favcolors)
+        {
+            Console.WriteLine(color);
+        }
+
+        Console.ReadKey();
 
         // Console.WriteLine(": {0}", name);
         // Console.WriteLine(" "); 
