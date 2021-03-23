@@ -2,8 +2,9 @@
 
 class MainClass
 {
-    // ===================================== Задание 5.1.5
+    // ===================================== Задание 5.1.7
 
+    // ---------------- заполнение любымых цветов   
     static string ShowColor()
     {
         Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
@@ -41,21 +42,48 @@ class MainClass
         return color;
     }
 
+    // ------------------ Заполнение массива интов
+    static int[] GetArrayFromConsole()
+    {
+        var result = new int[5];
+
+        for (int i = 0; i < result.Length; i++)
+        {
+            Console.WriteLine("Введите элемент массива номер {0}", i + 1);
+            result[i] = int.Parse(Console.ReadLine());
+        }
+
+        return result;
+    }
+
+
     public static void Main(string[] args)
     {
-        var favcolors = new string[3];
+        var arrInput = new int[5];
+        int minPrev;
 
-        
-        for ( int i = 0; i < favcolors.Length; i++)
+        arrInput = GetArrayFromConsole();   // Заполнили массив
+
+        //      А можно было и так
+        // var int[] array = GetArrayFromConsole();
+
+        var l = arrInput.Length;               // Отсортировали массив
+        for (int i = 0; i < l; i++)
         {
-            favcolors[i] = ShowColor();
+            for (int k = i + 1; k < l; k++)
+            {
+                if (arrInput[i] > arrInput[k])
+                {
+                    minPrev = arrInput[i];
+                    arrInput[i] = arrInput[k];
+                    arrInput[k] = minPrev;
+                }
+            }
+
+            Console.Write(arrInput[i] + " ");
         }
 
-        for (int i = 0; i < favcolors.Length; i++)
-        {
-            Console.WriteLine("Номер: {0}   Цвет: {1}", i, favcolors[i]);
-        }
-        Console.ReadKey();
+         Console.ReadKey();
 
         // Console.WriteLine(": {0}", name);
         // Console.WriteLine(" "); 
