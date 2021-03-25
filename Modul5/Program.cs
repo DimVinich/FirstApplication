@@ -4,7 +4,6 @@ class MainClass
 {
     // ===================================== Задание 5.2.7
 
-    // ---------------- заполнение любымых цветов   
     static string ShowColor(string username, int userage)
     {
         Console.WriteLine("{0}, {1} лет\nНапишите свой любимый цвет на английском с маленькой буквы", username, userage);
@@ -40,10 +39,9 @@ class MainClass
         }
 
         return color;
-    }
+    } // ---------------- заполнение любымых цветов   
 
-    // ------------------ ввод массива интов с сотритовкой
-    static int[] GetArrayFromConsole()
+    static int[] GetArrayFromConsole()                       // ------------------ ввод массива интов
     {
         var result = new int[5];
 
@@ -53,23 +51,27 @@ class MainClass
             result[i] = int.Parse(Console.ReadLine());
         }
 
+        return result;
+    }     
+    static int[] SortArray( int[] arrInt)                  // ------------------ сотрировка массива интов
+    {
+
         int minPrev = 0;
-        var l = result.Length;               // Отсортировали массив
+        var l = arrInt.Length;               
         for (int i = 0; i < l; i++)
         {
             for (int k = i + 1; k < l; k++)
             {
-                if (result[i] > result[k])
+                if (arrInt[i] > arrInt[k])
                 {
-                    minPrev = result[i];
-                    result[i] = result[k];
-                    result[k] = minPrev;
+                    minPrev = arrInt[i];
+                    arrInt[i] = arrInt[k];
+                    arrInt[k] = minPrev;
                 }
             }
         }
-        return result;
-    }
-
+        return arrInt;
+    }              
 
     public static void Main(string[] args)
     {
