@@ -4,21 +4,6 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace FinalTask
 {
-    [Serializable]
-    class Student
-    {
-        public string Name { get; set; }
-        public string Group { get; set; }
-        public DateTime DateOfBirth { get; set; }
-        public Student(string name, string group, DateTime dateOfBirth)
-        {
-            Name = name;
-            Group = group;
-            DateOfBirth = dateOfBirth;
-        }
-    }
-
-
     class Serializer
     {
         static void Main(string[] args)
@@ -32,7 +17,6 @@ namespace FinalTask
             }
 
             //  Созадать папку, запомнить её путь, проверить на наличие уже
-            //string nDir = @"D:\WorkTemp\Students";
             string nDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)+"\\Students";
             if (!Directory.Exists(nDir))
             {
